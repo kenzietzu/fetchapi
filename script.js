@@ -32,14 +32,18 @@ async function getData() {
     const apiURL = 'https://api.twelvedata.com';
     const key = '5877a14b53e9409f98bdd83275f7d6a3';
 
-
-    for (let i = 0; i < position.length; i++) {
-        console.log(`${apiURL}/time_series?symbol=${position[i]}&interval=1day&apikey=${key}`);
-        const response = await fetch(`${apiURL}/time_series?symbol=${position[i]}&interval=1day&apikey=${key}`);
-        const data = await response.json();
-        price.push(Math.floor(data.values[0].close * 100) / 100);
-        date.push(data.values[0].datetime);
+    try {
+        for (let i = 0; i < position.length; i++) {
+            console.log(`${apiURL}/time_series?symbol=${position[i]}&interval=1day&apikey=${key}`);
+            const response = await fetch(`${apiURL}/time_series?symbol=${position[i]}&interval=1day&apikey=${key}`);
+            const data = await response.json();
+            price.push(Math.floor(data.values[0].close * 100) / 100);
+            date.push(data.values[0].datetime);
+        }
+    } catch (err) {
+        console.log(err);
     }
+
     buildData();
 }
 
