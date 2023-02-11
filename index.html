@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stock Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="left-title">
+                <h3>Portfolio Value</h3>
+            </div>
+            <div class="left-value">
+                <h2 id="left-value"></h2>
+            </div>
+            <div class="left-ntd">
+                <h3 id="left-ntd"></h3>
+            </div>
+            <div class="left-chart">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class=right-container>
+            <div class="header">
+                <h1>CHARLIE'S DASHBOARD</h1>
+            </div>
+            <div class="loader" id="loader">
+                <img src="loader.svg" alt="loading">
+            </div>
+            <div>
+                <table class="table mt-5" id="table">
+                    <thead>
+                        <tr class="table-title">
+                            <th>Position</th>
+                            <th>Price</th>
+                            <th>Avg Price</th>
+                            <th>Units</th>
+                            <th>Profit/Loss</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td id="stock0"></td>
+                            <td id="price0"></td>
+                            <td>247.96102</td>
+                            <td>10.08223</td>
+                            <td id="profit0" class="profit"></td>
+                            <td id="value0"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock1"></td>
+                            <td id="price1"></td>
+                            <td>142.67223</td>
+                            <td>20.32631</td>
+                            <td id="profit1" class="profit"></td>
+                            <td id="value1"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock2"></td>
+                            <td id="price2"></td>
+                            <td>214.95728</td>
+                            <td>5.58251</td>
+                            <td id="profit2" class="profit"></td>
+                            <td id="value2"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock3"></td>
+                            <td id="price3"></td>
+                            <td>104.09179</td>
+                            <td>28.82071</td>
+                            <td id="profit3" class="profit"></td>
+                            <td id="value3"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock4"></td>
+                            <td id="price4"></td>
+                            <td>70.93772</td>
+                            <td>12.68719</td>
+                            <td id="profit4" class="profit"></td>
+                            <td id="value4"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock5"></td>
+                            <td id="price5"></td>
+                            <td>96.01315</td>
+                            <td>39.57791</td>
+                            <td id="profit5" class="profit"></td>
+                            <td id="value5"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock6"></td>
+                            <td id="price6"></td>
+                            <td>316.56313</td>
+                            <td>9.79267</td>
+                            <td id="profit6" class="profit"></td>
+                            <td id="value6"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock7"></td>
+                            <td id="price7"></td>
+                            <td>196.39482</td>
+                            <td>23.42221</td>
+                            <td id="profit7" class="profit"></td>
+                            <td id="value7"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock8"></td>
+                            <td id="price8"></td>
+                            <td>109.46</td>
+                            <td>14</td>
+                            <td id="profit8" class="profit"></td>
+                            <td id="value8"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock9"></td>
+                            <td id="price9"></td>
+                            <td>357.78</td>
+                            <td>8</td>
+                            <td id="profit9" class="profit"></td>
+                            <td id="value9"></td>
+                        </tr>
+                        <tr>
+                            <td id="stock10"></td>
+                            <td id="price10"></td>
+                            <td>248.33</td>
+                            <td>6</td>
+                            <td id="profit10" class="profit"></td>
+                            <td id="value10"></td>
+                        </tr>
+                        <tr>
+                            <td>ABNB</td>
+                            <td>107.76</td>
+                            <td>137.11</td>
+                            <td>2.18802</td>
+                            <td id="profit11" class="profit"></td>
+                            <td id="value11"></td>
+                        </tr>
+                        <tr>
+                            <td>BTC</td>
+                            <td>21365.02</td>
+                            <td>32996.98</td>
+                            <td>0.01</td>
+                            <td id="profit12" class="profit"></td>
+                            <td id="value12"></td>
+                        </tr>
+                        <tr>
+                            <td>$CASH</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>0</td>
+                            <td>8138</td>
+                        </tr>
+                        <tr>
+                            <td>$CASH</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>0</td>
+                            <td>1905</td>
+                        </tr>
+                        <tr class="table-title">
+                            <td>Total</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td id="sumVal"></td>
+                            <td id="sumValue"></td>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="date-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
