@@ -4,7 +4,9 @@ let date = [];
 const sumValueText = document.getElementById('sumValue');
 const leftValueText = document.getElementById('left-value');
 const leftNtdText = document.getElementById('left-ntd');
-const ntdRate = 30.189;
+const leftRateText = document.getElementById('left-rate');
+let ntdRate = 0;
+let rateUpdateTime = new Date;
 const loader = document.getElementById('loader');
 
 function buildData() {
@@ -25,6 +27,7 @@ function buildData() {
     //left-data
     leftValueText.textContent = `$${sumValueText.textContent}`;
     leftNtdText.textContent = `NT${Math.floor(Number.parseInt(sumValueText.textContent) * ntdRate)}`;
+    leftRateText.textContent = `Rate = 1 : ${ntdRate}`;
     loader.hidden = true;
 }
 
@@ -154,4 +157,15 @@ function calculate() {
     });
 }
 
-
+async function getRate() {
+    const rateApiUrl = 'https://v6.exchangerate-api.com/v6/71735a501f1d90cafdc87a53/latest/USD';
+    try {
+        const rateResponese = await fetch(rateApiUrl);
+        const rateData = await rateResponese.json();
+        ntdRate = rateData.conversion_rates.TWD;
+        rateUpdateTime = rateData.time_last_update_utc;
+    } catch (err) {
+        console.log(err);
+    }
+}
+getRate();

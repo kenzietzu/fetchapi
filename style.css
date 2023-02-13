@@ -41,7 +41,12 @@ body {
 
 .left-ntd {
     color: rgb(0, 136, 255);
+}
+
+.left-rate {
     margin-bottom: 20px;
+    font-size: 14px;
+    color: #7b7b7b;
 }
 
 .left-chart {
