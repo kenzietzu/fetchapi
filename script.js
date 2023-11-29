@@ -1,4 +1,4 @@
-const position = ['SQ', 'ABNB', 'PYPL', 'GOOG', 'U', 'TSM', 'QQQ', 'TSLA', ''];
+const position = ['DIS', 'ABNB', 'PYPL', 'GOOG', 'SQ', 'TSM', 'QQQ', 'TSLA', ''];
 let price = [];
 let date = [];
 const sumValueText = document.getElementById('sumValue');
