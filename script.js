@@ -1,4 +1,4 @@
-const position = ['NIO', 'ABNB', 'PYPL', 'GOOG', 'TLT', 'DIS', 'QQQ', 'TSLA'];
+const position = ['ENPH', 'U', 'CGC', 'SPCE', '', '', '', 'TSLA'];
 let price = [];
 let date = [];
 const sumValueText = document.getElementById('sumValue');
@@ -17,8 +17,8 @@ function buildData() {
 
     // document.getElementById('stock9').textContent = position[6];
     // document.getElementById('price9').textContent = price[6];
-    // document.getElementById('stock10').textContent = position[7];
-    // document.getElementById('price10').textContent = price[7];
+    document.getElementById('stock10').textContent = position[7];
+    document.getElementById('price10').textContent = price[7];
     calculate();
 
     //date
