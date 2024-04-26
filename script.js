@@ -15,8 +15,8 @@ function buildData() {
         document.getElementById(`price${i}`).textContent = price[i];
     }
 
-    // document.getElementById('stock9').textContent = position[6];
-    // document.getElementById('price9').textContent = price[6];
+    document.getElementById('stock11').textContent = position[7];
+    document.getElementById('price11').textContent = price[7];
     document.getElementById('stock10').textContent = position[7];
     document.getElementById('price10').textContent = price[7];
     calculate();
@@ -67,7 +67,7 @@ function calculate() {
     profit9 = profit9 + Number.parseInt(((table.rows[10].cells[1].innerHTML) * (table.rows[10].cells[3].innerHTML)) - ((table.rows[10].cells[2].innerHTML) * (table.rows[10].cells[3].innerHTML)));
     profit10 = profit10 + Number.parseInt(((table.rows[11].cells[1].innerHTML) * (table.rows[11].cells[3].innerHTML)) - ((table.rows[11].cells[2].innerHTML) * (table.rows[11].cells[3].innerHTML)));
     profit11 = profit11 + Number.parseInt(((table.rows[12].cells[1].innerHTML) * (table.rows[12].cells[3].innerHTML)) - ((table.rows[12].cells[2].innerHTML) * (table.rows[12].cells[3].innerHTML)));
-    profit12 = profit12 + Number.parseInt(((table.rows[13].cells[1].innerHTML) * (table.rows[13].cells[3].innerHTML)) - ((table.rows[13].cells[2].innerHTML) * (table.rows[13].cells[3].innerHTML)));
+    // profit12 = profit12 + Number.parseInt(((table.rows[13].cells[1].innerHTML) * (table.rows[13].cells[3].innerHTML)) - ((table.rows[13].cells[2].innerHTML) * (table.rows[13].cells[3].innerHTML)));
 
     document.getElementById('profit0').textContent = profit0;
     document.getElementById('profit1').textContent = profit1;
@@ -81,7 +81,7 @@ function calculate() {
     document.getElementById('profit9').textContent = profit9;
     document.getElementById('profit10').textContent = profit10;
     document.getElementById('profit11').textContent = profit11;
-    document.getElementById('profit12').textContent = profit12;
+    // document.getElementById('profit12').textContent = profit12;
 
     let sumVal = 0;
     for (let i = 1; i < table.rows.length - 1; i++) {
@@ -111,7 +111,7 @@ function calculate() {
     value9 = value9 + Number.parseInt(((table.rows[10].cells[1].innerHTML) * (table.rows[10].cells[3].innerHTML)));
     value10 = value10 + Number.parseInt(((table.rows[11].cells[1].innerHTML) * (table.rows[11].cells[3].innerHTML)));
     value11 = value11 + Number.parseInt(((table.rows[12].cells[1].innerHTML) * (table.rows[12].cells[3].innerHTML)));
-    value12 = value12 + Number.parseInt(((table.rows[13].cells[1].innerHTML) * (table.rows[13].cells[3].innerHTML)));
+    // value12 = value12 + Number.parseInt(((table.rows[13].cells[1].innerHTML) * (table.rows[13].cells[3].innerHTML)));
 
     document.getElementById('value0').textContent = value0;
     document.getElementById('value1').textContent = value1;
@@ -125,7 +125,7 @@ function calculate() {
     document.getElementById('value9').textContent = value9;
     document.getElementById('value10').textContent = value10;
     document.getElementById('value11').textContent = value11;
-    document.getElementById('value12').textContent = value12;
+    // document.getElementById('value12').textContent = value12;
     let sumValue = 0;
     for (let i = 1; i < table.rows.length - 1; i++) {
         sumValue = sumValue + Number.parseInt(table.rows[i].cells[5].innerHTML);
