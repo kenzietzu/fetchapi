@@ -1,4 +1,4 @@
-const position = ['ENPH', 'U', 'CGC', 'SPCE', 'SBUX', 'TLT', 'INTC', 'ADBE'];
+const position = ['ENPH', 'U', 'U', 'MCD', 'SBUX', 'TLT', 'INTC', 'ADBE'];
 let price = [];
 let date = [];
 const sumValueText = document.getElementById('sumValue');
