@@ -1,4 +1,4 @@
-const position = ['AMD', 'AAPL', 'MSFT', 'TSM', 'ASML', 'TLT', 'INTC', 'ABNB'];
+const position = ['AMD', 'AAPL', 'MSFT', 'TSM', 'ASML', 'TLT', 'INTC', 'NVDA'];
 let price = [];
 let date = [];
 const sumValueText = document.getElementById('sumValue');
